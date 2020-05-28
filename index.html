@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Crimson+Text" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.min.css">
+    <link rel="stylesheet" href="./css/collapse.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.0.4/fuse.min.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+    <script src="./js/dihard2.js"></script>
+    <title>DIHARD Challenge 2019</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="DIHARD Challenge 2019">
+    <meta name="keywords" content="DIHARD, INTERSPEECH">
+    <link rel="apple-touch-icon" sizes="57x57" href="./ico/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="./ico/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="./ico/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="./ico/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="./ico/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="./ico/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="./ico/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="./ico/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./ico/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="./ico/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./ico/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="./ico/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./ico/favicon-16x16.png">
+    <link rel="manifest" href="./ico/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+    <!-- Countdown -->
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery.countdown.min.js"></script>
+</head>
+
+<body>
+    <div id="root">
+        <header class="row">
+            <a class="button col-sm col-md" href="./index.html"><span class="logo col-sm-3 col-md">DIHARD II</span></a>
+            <a class="button col-sm col-md" href="#resultssubmission"><span>Submission</span></a>
+            <a class="button col-sm col-md" href="#results"><span>Results</span></a>
+            <label for="doc-drawer-checkbox" class="button drawer-toggle col-sm"></label>
+        </header>
+        <div class="row" id="doc-wrapper">
+            <input id="doc-drawer-checkbox" class="drawer" value="on" type="checkbox">
+            <nav class="col-md-3 col-lg-2" id="nav-drawer">
+                <h3>Menu</h3><label for="doc-drawer-checkbox" class="button drawer-close"></label>
+                <a href="#introduction" id="link-introduction" class="doc"><span style="color:black; font-weight:bold">DIHARD2</span></a>
+                <a href="#dates" id="link-dates" class="sublink-1 doc">Important Dates</a>
+                <a href="#organizers" id="link-organizers" class="sublink-1 doc">Organizers & Contact</a>
+                <a href="#evaluation" id="link-detail" class="sublink-1 doc">Evaluation plan</a>
+                <a href="#software" id="link-instructions" class="doc"><span style="color:black; font-weight:bold">Software</span></a>
+                <a href="#scoring" id="link-detail" class="sublink-1 doc">Scoring</a>
+                <a href="#baselines" id="link-detail" class="sublink-1 doc">Baseline systems</a>
+                <a href="#instructions" id="link-instructions" class="doc"><span style="color:black; font-weight:bold">Instructions</span></a>
+                <a href="#registration" id="link-detail" class="sublink-1 doc">Registration</a>
+                <a href="#license" id="link-detail" class="sublink-1 doc">Data license agreement</a>
+                <a href="#resultssubmission" id="link-detail" class="sublink-1 doc">Results submission</a>
+                <!--
+                <a href="#accountcreation" id="link-accountcreation" class="sublink-2">Account creation</a>
+                <a href="#teamcreation" id="link-teamcreation" class="sublink-2">Setting up your team name</a>
+                <a href="#trackregistration" id="link-trackregistration" class="sublink-2">Registering for tracks</a>
+                <a href="#resultzip" id="link-resultzip" class="sublink-2">Results zipfile format</a>
+                <a href="#submitresults" id="link-submitresults" class="sublink-2">Submitting results via CodaLab</a>
+                <a href="#leaderboard" id="link-leaderboard" class="sublink-2">Leaderboard</a>
+                <a href="#resultrules" id="link-resultrules" class="sublink-2">Rules</a>
+        -->
+                <a href="#papersubmission" id="link-detail" class="sublink-1 doc">Paper submission</a>
+                <a href="#system" id="link-detail" class="sublink-1 doc">System descriptions</a>
+                <a href="#final-results" id="link-detail" class="sublink-1 doc">Final results</a>
+                <a href="#results" id="link-instructions" class="doc"><span style="color:black; font-weight:bold">Results</span></a>
+                <a href="#faq" id="link-instructions" class="doc"><span style="color:black; font-weight:bold">FAQ</span></a>
+                <a href="#contact" id="link-contact" class="doc"><span style="color:black; font-weight:bold">Contact Us</span></a>
+                <span id="no-results">No results found</span>
+            </nav>
+            <main class="col-sm-12 col-md-9 col-lg-10" id="doc-content">
+                <div id="introduction" class="card fluid">
+                    <h2 class="section double-padded dark">The Second DIHARD Speech Diarization Challenge</h2>
+                    <div class="section">
+                        <p align="justify">
+                            DIHARD II is the second in a series of diarization challenges focusing on "hard" diarization; that is, speaker diarization for challenging recordings where there is an expectation that the current state-of-the-art will fare poorly. As with other evaluations in this series, DIHARD II is intended to both:
+                            <ul>
+                                <li>support speaker diarization research through the creation and distribution of novel data sets</li>
+                                <li>measure and calibrate the performance of systems on these data sets.</li>
+                            </ul>
+                        </p>
+                        <div class="row" style="width:100%;">
+                            <div class="card warning fluid" style="width:100%; text-align:center"><br><b>Following in the success of the <a href="https://dihardchallenge.github.io/dihard1/">First DIHARD Challenge</a>, <br>we are pleased to announce <a href="https://dihardchallenge.github.io/dihard2/">This Second DIHARD Challenge (DIHARD II)</a></b><br></div>
+                        </div>
+                        <p align="justify">
+                            The task evaluated in the challenge is speaker diarization; that is, the task of determining "who spoke when" in a multispeaker environment based only on audio recordings. As with <a href="https://dihardchallenge.github.io/dihard1/">DIHARD I</a>, development and evaluation sets are provided by the organizers, but there is no fixed training set with the result that participants are free to train their systems on any proprietary and/or public data. Once again, these development and evaluation sets are drawn from a diverse sampling of sources including monologues, map task dialogues, broadcast interviews, sociolinguistic interviews, meeting speech, speech in restaurants, clinical recordings, extended child language acquisition recordings from LENA vests, and YouTube videos. However, there are several key differences from DIHARD I:
+                            <ul>
+                                <li>two tracks evaluating diarization of multi-channel recordings have been added; these tracks use recordings of dinner parties provided by the organizers of <a href="http://spandh.dcs.shef.ac.uk/chime_challenge/CHiME5/">CHiME-5</a> </li>
+                                <li>the evaluation period has been lengthened (from 4 weeks to 16 weeks)</li>
+                                <li>Jaccard Error Rate replaces mutual information as the secondary metric</li>
+                                <li>baseline systems and results will be provided to participants</li>
+                            </ul>
+                        </p>
+                        <p align="justify">
+                            The challenge will run from <b>February 14th, 2019 through July 1, 2019 </b>and results will be presented at a special session at <a href="https://www.interspeech2019.org">Interspeech 2019</a> in<b> Graz - Austria</b>. Participation in the evaluation is open to all who are interested and willing to comply with the rules laid out in the <a href="#evaluation">evaluation plan</a>. There is no cost to participate, though participants are encouraged to submit a paper to the corresponding Interspeech 2019 special session.
+                        </p>
+                        <div class="row" style="width:100%;">
+                            <div class="card warning fluid" style="width:100%; text-align:center"><br><b>For questions not answered in this document or to join the DIHARD mailing list, please contact <a href="mailto:dihardchallenge@gmail.com" target="_top">dihardchallenge@gmail.com</a></b><br>
+                                <b>For more information <a href="https://groups.google.com/forum/#!forum/dihard">join our mailing list</a></b><br>
+                            </div>
+                        </div>
+                        <div class="row" style="width:100%">
+                            <div id="evaluation" class="card fluid" style="width:100%; text-align: center">
+                                <h2 class="section double-padded dark"><small>Evaluation plan</small></h2>
+                                <div class="section">
+                                    <p align="justify">
+                                        For all details concerning the overall challenge design, tasks, scoring metrics, datasets, rules, and data formats, please consult the latest version of the official evaluation plan:
+                                        <ul>
+                                            <li><a href="docs/second_dihard_eval_plan_v1.2.pdf">Second DIHARD Challenge Evaluation Plan (version 1.2)</a>
+                                                <font color="red"><b>UPDATED June 18th, 2019</b></font>
+                                            </li>
+                                            <li><a href="docs/second_dihard_eval_plan_v1.1.pdf">Second DIHARD Challenge Evaluation Plan (version 1.1)</a></li>
+                                        </ul>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div id="dates" class="card fluid">
+                                <h2 class="section double-padded dark" style="text-align: center"><small>Important dates</small></h2>
+                                <div class="section">
+                                    <table class="hoverable">
+                                        <thead>
+                                            <tr>
+                                                <th>Event</th>
+                                                <th style="text-align:right">Date</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <li>
+                                                        <font size="4"><b>Registration period</b></font>
+                                                    </li>
+                                                </td>
+                                                <td align="right"><u>January 30 through March 15, 2019</u>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <li>
+                                                        <font size="4"><b>Launch: release of DIHARD II development and evaluation sets + scoring code</b></font>
+                                                    </li>
+                                                </td>
+                                                <td align="right"><u>February 28, 2019</u>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <li>
+                                                        <font size="4"><b>Scoring server opens</b></font>
+                                                    </li>
+                                                </td>
+                                                <td align="right"><u>March 12, 2019</u>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <li>
+                                                        <font size="4"><b>Baselines released</b></font>
+                                                    </li>
+                                                </td>
+                                                <td align="right"><u>Week of March 11, 2019</u>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                            <tr>
+                                                <td>
+                                                    <li>
+                                                        <font size="4"><b>Interspeech paper registration deadline</b></font>
+                                                    </li>
+                                                </td>
+                                                <td align="right"><u>March 29, 2019</u>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <li>
+                                                        <font size="4"><b>Interspeech submission deadline</b></font>
+                                                    </li>
+                                                </td>
+                                                <td align="right"><u>April 5, 2019</u></td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <li>
+                                                        <font size="4"><b>End of challenge/final Interspeech deadline</b></font>
+                                                    </li>
+                                                </td>
+                                                <td align="right"><u>July 1, 2019</u>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <li>
+                                                        <font size="4"><b>System descriptions due</b></font>
+                                                    </li>
+                                                </td>
+                                                <td align="right"><u>August 16, 2019</u>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <li>
+                                                        <font size="4"><b>Interspeech 2019 special session</b></font>
+                                                    </li>
+                                                </td>
+                                                <td align="right"><u>September 15-19, 2019</u>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="row" style="width:100%;">
+                                    <div class="card warning fluid" style="width:100%; text-align:center">
+                                        <p style="text-align:center"><b>
+                                                The deadline for submission of final system outputs is <mark>July 1, 2019 midnight</mark>.</b></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div id="organizers" class="card fluid">
+                                    <h2 class="section double-padded dark" style="width:100%; text-align: center"><small>Organizers</small></h2>
+                                    <div class="section">
+                                        <div class="col-sm col-sm-offset-0">
+                                            <h5 style="text-align: center"><b><a href="javascript:void(0)" onclick="hideshow('church')" id="kenneth">Kenneth Church </a></b><br>(Baidu Research, Sunnyvale, CA, USA)</h5>
+                                            <p align="justify" id="church" style="display:none">
+                                                Kenneth Church has worked on many topics in computational linguistics including: web search, language modeling, text analysis, spelling correction, word-sense disambiguation, terminology, translation,lexicography, compression, speech (recognition, synthesis &amp; diarization), OCR, as well as applications that go well beyond computational linguistics such as revenue assurance and virtual integration (using screen scraping and web crawling to integrate systems that traditionally don’t talk together as well as they could such as billing and customer care). He enjoys working with large corpora such as the Associated Press newswire (1 million words per week) and even larger datasets such as telephone calldetail (1-10 billion records per month) and web logs. He earned his undergraduate and graduate de-grees from MIT, and has worked at AT&amp;T, Microsoft, Hopkins and IBM. He was the president of ACLin 2012, and SIGDAT (the group that organizes EMNLP) from 1993 until 2011. He became an AT&amp;T Fellow in 2001.
+                                            </p>
+                                            <h5 style="text-align: center"><b><a href="javascript:void(0)" onclick="hideshow('cieri')" id="christopher">Christopher Cieri</a></b><br>(Linguistic Data Consortium)</h5>
+                                            <p align="justify" id="cieri" style="display:none">Christopher Cieri was trained as a linguist working principally on language contact and variation in phonology. More recently, he has worked at the intersection of corpus building, linguistic analysis and human language technology development and evaluation. In 1998, he became Executive Directory of the Linguistic Data Consortium (LDC), where he oversees LDC operations including the creation and distribution of hundreds of databases. His recent work focuses on social dimensions of linguistic variation, corpus building for clinical applications and the science of human linguistic annotation, especially the impact of incentives and workflows.
+                                            </p>
+                                            <h5 style="text-align: center"><b><a href="javascript:void(0)" onclick="hideshow('cristia')" id="alejandrina">Alejandrina Cristia</a></b><br>(Laboratoire de Sciences Cognitives et Psycholinguistique, ENS, Paris, France)</h5>
+                                            <p align="justify" id="cristia" style="display:none">Alejandrina Cristia received her PhD in Linguistics from Purdue University and did post-doctoral work on neuroimaging at the Max Planck Institute for Psycholinguistics before joining the French CNRS as a Researcher in 2013. Her publications include 45 journal articles (e.g., <i>Psychological Science</i>; <i>Child Development</i>; average impact factor 2.8) and 16 conference proceeding articles (including a best short paper award from ACL 2017; h-index scholar.google.com: 18). She is the French PI for the “Analyzing Children’s Language Environments across the World” (sites.google.com/site/aclewdid) project, which is developing cross-linguistically valid annotations and automatized analysis routines for daylong audio-recordings gathered from young children.
+                                            </p>
+                                            <h5 style="text-align: center"><b><a href="javascript:void(0)" onclick="hideshow('du')" id="jun">Jun Du</a></b><br>(University of Science and Technology of China, Hefei, China)</h5>
+                                            <p align="justify" id="du" style="display:none">Jun Du received the B.Eng. and Ph.D. degrees from the Department of Electronic Engineering and Information Science, University of Science and Technology of China (USTC), Hefei, China, in 2004 and 2009, respectively. From July 2009 to June 2010, he worked with iFlytek Research. From July 2010 toJanuary 2013, he joined Microsoft Research Asia as an associate researcher. Since February 2013, hehas been with USTC as an associate professor. His research interests include speech signal processingand pattern recognition. He has published more than 80 conference and journal papers with 1000+ citations in Google Scholar.
+                                            </p>
+                                            <h5 style="text-align: center"><b><a href="javascript:void(0)" onclick="hideshow('ganapathy')" id="sriram">Sriram Ganapathy</a></b><br>(Electrical Engineering Department, Indian Institute of Science, Bangalore, India)</h5>
+                                            <p align="justify" id="ganapathy" style="display:none">Dr. Sriram Ganapathy is an Assistant Professor at the Electrical Engineering Dept., Indian Institute of Science, Bangalore and he leads the activities of the learning and extraction of acoustic patterns(LEAP) laboratory. Before joining as a faculty member in early 2016, he spent 4 years as a Research Staff Member at the IBM T.J. Watson Research Center in Yorktown Heights, NY, USA. He obtainedhis PhD from the Center for Language and Speech Processing (CLSP), Johns Hopkins University, USA. Over the past 10 years, Dr. Ganapathy has published over 60 articles in leading international journals and conferences along with a number of patents. Dr. Ganapathy also won the best tutorial speakeraward in Interspeech 2014 and the Pratiksha Young Investigator award in 2017. Dr. Ganapathy is a member of the International Speech Communication Association (ISCA) and a senior member ofthe IEEE signal processing society. His research interests are in signal processing, machine learning, deep learning and neuroscience with applications to robust speech recognition, speech enhancementand audio analytics including biometrics.
+                                            </p>
+                                            <h5 style="text-align: center"><b><a href="javascript:void(0)" onclick="hideshow('liberman')" id="mark">Mark Liberman</a></b><br>(Linguistic Data Consortium, University of Pennsylvania, Philadelphia, PA, USA)</h5>
+                                            <p align="justify" id="liberman" style="display:none">Mark Liberman trained as a phonetician and has worked in many areas including: corpus-based phonetics; speech and language technology; the phonology and phonetics of lexical tone, and its relationship to intonation; gestural, prosodic, morphological and syntactic ways of marking focus, and their usein discourse; formal models for linguistic annotation; information retrieval and information extraction from text. He was an undergraduate at Harvard and earned a PhD at MIT, before moving on to AT&amp;T Bell Labs from 1975 to 1990. Since 1990 he has served as the Trustee Professor of Phonetics at the University of Pennsylvania. In 1992 he helped found the Linguistic Data Consortium (LDC), whoseefforts have fueled the development and advancement of human language technology (HLT), including speech and speaker recognition, machine translation, and semantic analyses. Today, the LDC is the largest developer of shared language resources in the world, distributing more than 120,000 copies of over 2,000 databases covering 91 different languages to more than 3,600 organizations in over 70 countries.
+                                            </p>
+                                            <h5 style="text-align: center"><b><a href="javascript:void(0)" onclick="hideshow('ryant')" id="neville">Neville Ryant</a></b><br>(Linguistic Data Consortium, University of Pennsylvania, Philadelphia, PA, USA)</h5>
+                                            <p align="justify" id="ryant" style="display:none">Neville Ryant is a researcher at the Linguistic Data Consortium (LDC) at the University of Pennsylvania, where he has worked on many topics in speech recognition including: forced alignment, speech activity detection, large scale corpus linguistics, computational paralinguistics, and automated analysis of tone. He has also supported LDC’s annotation efforts through the development of new tools for named entity recognition, sentence segmentation, and comparable corpora construction for low resource languages. He did his undergraduate and graduate studies at the University of Pennsylvania, where he focused on formal semantics and the neural basis of natural language quantifiers.</p>
+                                            <br>
+                                            <h3 style="text-align: center">In collaboration with</h3>
+                                            <h4 style="text-align: center">the organizers of the <a href="http://spandh.dcs.shef.ac.uk/chime_challenge/CHiME5">CHiME 5 Challenge</a></h4>
+                                            <br>
+                                            <br>
+                                            <div class="card fluid">
+                                                <h3 class="section double-padded" style="text-align: center">Communications Team</h3>
+                                                <h5 style="text-align: center"><b>Sunghye Cho</b><br>(Linguistic Data Consortium, University of Pennsylvania, Philadelphia, PA, USA)</h5>
+                                                <h5 style="text-align: center"><b>Rachid Riad</b><br>(Laboratoire de Sciences Cognitives et Psycholinguistique, ENS, Paris, France)</h5>
+                                                <h5 style="text-align: center"><b>Lei Sun</b><br>(University of Science and Technology of China, Hefei, China)</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div id="software" class="card fluid">
+                            <h2 class="section double-padded dark">Software</h2>
+                            <div class="section">
+                                <div id="scoring" class="card fluid">
+                                    <h2 class="section double-padded dark"><small>Scoring</small></h2>
+                                    <p align="justify">
+                                        The official scoring tool is maintained as a <a href="https://github.com/nryant/dscore">github repo</a> (v1.1.0). To score a set of system output RTTMs <i>sys1.rttm</i>, <i>sys2.rttm</i>, ... against corresponding reference RTTMs <i>ref1.rttm</i>, <i>ref2.rttm</i>, ... using the un-partitioned evaluation map (UEM) <i>all.uem</i>, the command line would be:
+                                        <pre>
+                  <code>
+$ python score.py -u all.uem -r ref1.rttm ref2.rttm ... -s sys1.rttm sys2.rttm ...</code>
+                </pre>
+                                    </p>
+                                    <p align="justify">
+                                        The overall and per-file results for DER and JER (and many other metrics) will be printed to STDOUT as a table. For additional details about scoring tool usage, please consult the documentation for the <a href="https://github.com/nryant/dscore">github repo</a>.
+                                    </p>
+                                </div>
+                                <div id="baselines" class="card fluid">
+                                    <h2 class="section double-padded dark"><small>Baseline systems</small></h2>
+                                    <p align="justify">
+                                        We provide three software baselines for speech enhancement, speech activity detection, and diarization:
+                                        <ul>
+                                            <li><b>Speech enhancement</b>
+                                                <br>
+                                                The speech enhancement baseline was prepared by <a href="http://home.ustc.edu.cn/~sunlei17/">Lei Sun</a> and is based on the system used by <a href="http://staff.ustc.edu.cn/~jundu/">USTC</a> and <a href="http://www.iflytek.com">iFLYTEK</a> in their submission to DIHARD I:
+                                                <ul>
+                                                    Sun, Lei, et al. "Speaker diarization with enhancing speech for the First DIHARD Challenge." (2018). Proceedings of INTERSPEECH 2018. 2793-2797. (<a href="http://home.ustc.edu.cn/~sunlei17/pdf/lei_IS2018.pdf">paper</a>)
+                                                </ul>
+                                                It is <a href="https://github.com/staplesinLA/denoising_DIHARD18.git">available on github</a>.
+                                            </li>
+                                            <li><b>Speech activity detection</b>
+                                                <br>
+                                                The speech activity detection baseline uses <a href="https://github.com/wiseman/py-webrtcvad">WebRTC</a> operating on output of audio processed by the speech enhancement baseline and is maintained as part of <a href="https://github.com/staplesinLA/denoising_DIHARD18">that github repo</a>.
+                                            </li>
+                                            <li><b>Diarization</b>
+                                                <br>
+                                                The diarization baseline was prepared by <a href="http://leap.ee.iisc.ac.in/sriram/">Sriram Ganapathy</a>, <a href="http://www.leap.ee.iisc.ac.in/members/">Harshah Vardhan MA</a>, and <a href="http://www.leap.ee.iisc.ac.in/members/">Prachi Singh</a> and is based on the system used by <a href="https://www.clsp.jhu.edu/">JHU</a> in their submission to DIHARD I with the exception that it omits the <a href="https://speech.fit.vutbr.cz/software/vb-diarization-eigenvoice-and-hmm-priors">Variational-Bayes</a> refinement step:
+                                                <ul>
+                                                    Sell, Gregory, et al. (2018). "Diarization is Hard: Some experiences and lessons learned for the JHU team in the Inaugural DIHARD Challenge." Proceedings of INTERSPEECH 2018. 2808-2812. (<a href="http://www.danielpovey.com/files/2018_interspeech_dihard.pdf">paper</a>)
+                                                </ul>
+                                                The x-vector extractor and PLDA parameters were trained on VoxCeleb I and II using data augmentation (additive noise and reverberation), while the whitening transformation was learned from the DIHARD II development set.
+                                                <br>
+                                                <br>
+                                                The trained system, as well as recipes to produce the baseline results for each track, is <a href="https://github.com/iiscleap/DIHARD_2019_baseline_alltracks">available on github</a>.
+                                            </li>
+                                        </ul>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="instructions" class="card fluid">
+                    <h2 class="section double-padded dark">Instructions</h2>
+                    <div class="section">
+                        <div id="registration" class="card fluid">
+                            <h2 class="section double-padded dark"><small>Registration</small></h2>
+                            <div class="section">
+                                <p align="justify">To register for the evaluation, participants should email <a href="mailto:dihardchallenge@gmail.com" target="_top">dihardchallenge@gmail.com</a> with the subject line "<code>REGISTRATION</code>" and the following details:</p>
+                                <ul>
+                                    <li><b>Organization</b> – the organization competing (e.g., NIST, BBN, SRI)</li>
+                                    <li><b>Team name</b> – the name to be displayed on the leaderboard; you need to use that same team name when you register for the competition on CodaLab (see under <a href="#resultssubmission">Results submission</a>)</li>
+                                    <li><b>Tracks</b> – which tracks they will be competing in</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div id="license" class="card fluid">
+                            <h2 class="section double-padded dark"><small>Data license agreement</small></h2>
+                            <div class="section">
+                                <p align="justify">One participant from each site must sign the <a href="docs/Second_DIHARD_Challenge_License_Agreement.pdf">data license agreement</a> and return it to LDC: (1) by email to <a href="mailto:ldc@ldc.upenn.edu" target="_top">ldc@ldc.upenn.edu</a> or (2) by facsimile, Attention: Membership Office, fax number (+1) 215-573-2175. They will also need to create an <a href="https://catalog.ldc.upenn.edu/signup">LDC Online user account</a>, which will be used to download the dev and eval releases. <br><br>Once the process is complete, this will give you access to all annotation plus the non-CHiME audio.<br><br>
+                                    <b>Participants of tracks 3 and 4 need to apply separately to Sheffield for the CHiME 5 data</b> regardless of whether you participated in CHiME 5. To apply for the multi-channel data, visit
+                                    <ul>
+                                        <a href="https://licensing.sheffield.ac.uk/i/data/chime5.html">https://licensing.sheffield.ac.uk/i/data/chime5.html</a><br>
+                                    </ul>
+                                    Non-profit organizations should sign the non-commercial license. Everyone else, regardless of use case (even if they are only using the data for non-commercial research), should apply for the commercial license.</p>
+                            </div>
+                        </div>
+                        <div id="resultssubmission" class="card fluid">
+                            <h2 class="section double-padded dark"><small>Results submission</small></h2>
+                            <div class="section">
+                                <div id="accountcreation" class="card fluid">
+                                    <h2 class="section double-padded dark"><small>Account creation</small></h2>
+                                    <div class="section">
+                                        <ul>
+                                            <li>For system submission and scoring, this year we are using an instance of <a href="https://github.com/codalab/codalab-competitions">CodaLab</a> hosted at:
+                                                <ul>
+                                                    <a href="http://dihard.ldc.upenn.edu">http://dihard.ldc.upenn.edu</a>
+                                                </ul>
+                                            </li>
+                                            <li>Each team should create one (and only one) account, which will then be used for submitting <b>ALL</b> of that team’s results for scoring. In CodaLab, the daily and lifetime submission limits are tied to user accounts, so it is imperative that each team use a <b>SINGLE</b> account to make <b>ALL</b> submissions.</li>
+                                            <li>To create an account, navigate to:
+                                                <ul>
+                                                    <a href="http://dihard.ldc.upenn.edu/accounts/signup/?next=/">http://dihard.ldc.upenn.edu/accounts/signup/?next=/</a>
+                                                </ul>
+                                                and fill out the following fields:
+                                                <ul>
+                                                    <li><b>username</b> -- username you wish to use; this will be displayed on the leaderboard</li>
+                                                    <li><b>email</b> -- the contact email address you provided when registering for DIHARD; if you use a different email, when you later attempt to <a href="#trackregistration">register for a track</a> your request will not be approved</li>
+                                                    <li><b>password</b> -- password you wish to use for the competition</li>
+                                                </ul>
+                                            <li>Accept the terms and conditions, and click <b>Sign Up</b>. A confirmation email will then be sent to the email address that you entered. To activate your account, click on the confirmation link in this email.</li>
+                                        </ul>
+                                        <div id="registration-problems" class="card fluid">
+                                            <h2 class="section double-padded dark"><small>Troubleshooting</small></h2>
+                                            <div class="section">
+                                                <ul>
+                                                    <li> If you do not see a confirmation email, check that it has not been caught by your email provider’s spam filter. You may find it by searching for the subject line <i>“[CodaLab] Confirm email address for your CodaLab account”</i></li>
+                                                    <li> If you still do not see a confirmation email, try prompting CodaLab to resend it:
+                                                        <ul>
+                                                            <li>Navigate to <a href="http://dihard.ldc.upenn.edu/accounts/login/?next=/">http://dihard.ldc.upenn.edu/accounts/login/?next=/</a>.</li>
+                                                            <li>Enter your email address or username in the <b>Login</b> field.</li>
+                                                            <li>Enter your password in the the <b>Password</b> field.</li>
+                                                            <li>Click <b>Sign In</b>.</li>
+                                                        </ul>
+                                                    </li>
+                                                    <li> If you still are unable to get a confirmation email, try using a different email address. Please then let us know at <a href="mailto:dihardchallenge@gmail.com" target="_top">dihardchallenge@gmail.com</a> which address you are using so that we may make a note of this on your registration. This will ensure that when you later <a href="#trackregistration">register for the tracks</a>, your requests are not denied.</li>
+                                                    <li> Finally, if none of the above work, contact us by email and we will attempt to resolve your issue.</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <!--                      <li> If you do not see a confirmation email, check that it has not been caught by your email provider’s spam filter. You may find it by searching for the subject line <i>“[CodaLab] Confirm email address for your CodaLab account”</i>.</li>
+                                        </ul>
+-->
+                                    </div>
+                                </div>
+                                <div id="teamcreation" class="card fluid">
+                                    <h2 class="section double-padded dark"><small>Setting up your team name</small></h2>
+                                    <div class="section">
+                                        <ul>
+                                            <li>In order for your team name to appear next to each submission on the leaderboard, you will need to add it to your CodaLab user profile. Please use the same name you used when registering for the challenge.</li>
+                                            <li>Access the <b>User Settings</b> page by selecting <b>Settings</b> from your user menu (always found in the top right of the page with your username).</li>
+                                            <li>Scroll down to the <b>Competition settings</b> section and look for the box titled <b>Team name</b>. Enter your team name into this box.</li>
+                                            <li>Click <b>Save Changes</b>.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div id="trackregistration" class="card fluid">
+                                    <h2 class="section double-padded dark"><small>Registering for tracks</small></h2>
+                                    <div class="section">
+                                        <ul>
+                                            <li>Due to limitations of CodaLab, each track has been created as a separate competition. The pages for the four competitions are:</li>
+                                            <ul>
+                                                <li><b>Track 1</b>: <a href="http://dihard.ldc.upenn.edu/competitions/73">http://dihard.ldc.upenn.edu/competitions/73</a></li>
+                                                <li><b>Track 2</b>: <a href="http://dihard.ldc.upenn.edu/competitions/74">http://dihard.ldc.upenn.edu/competitions/74</a></li>
+                                                <li><b>Track 3</b>: <a href="http://dihard.ldc.upenn.edu/competitions/75">http://dihard.ldc.upenn.edu/competitions/75</a></li>
+                                                <li><b>Track 4</b>: <a href="http://dihard.ldc.upenn.edu/competitions/76">http://dihard.ldc.upenn.edu/competitions/76</a></li>
+                                            </ul>
+                                            <li>Before submitting to a track, you will have to register for it via our CodaLab instance. To register, navigate to the competition page of the track, click on the <b>Participate</b> tab, accept the terms and conditions, and click <b>Register</b>. A member of the DIHARD team will then review your registration request and approve it. Upon acceptance you will receive an email titled <b>“Accepted into DIHARD Challenge...”</b>.</li>
+                                            <li>
+                                                <font color="red"><b>IMPORTANT:</b></font> Your CodaLab account <b>MUST</b> use the same email address that you provided during <a href="#registration">DIHARD registration</a>. If the addresses differ, your request will be denied.
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div id="resultzip" class="card fluid">
+                                    <h2 class="section double-padded dark"><small>Results zip archive format</small></h2>
+                                    <div class="section">
+                                        <ul>
+                                            <li>System output for each track should be submitted as a zip file that expands into a single directory of RTTM files containing one RTTM file for each session in that track’s evaluation set. For instance, for tracks 1 and 2 this directory should contain one RTTM file for each FLAC file:</li>
+                                            <pre>
+                          <code>
+DH_0001.rttm
+DH_0002.rttm
+...
+DH_0194.rttm
+                          </code></pre>
+                                            and for tracks 3 and 4 this directory should contain one RTTM file for each Kinect array:
+                                            <pre>
+                          <code>
+S01_U01.rttm
+S01_U02.rttm
+...
+S21_U06.rttm
+                        </code></pre>
+                                            RTTMs should be present for all sessions. If any RTTMs are missing your submission will <b>NOT</b> be scored.
+                                            <li>Examples of valid zip files for each track:</li>
+                                            <ul>
+                                                <li><b>Track 1</b>: <a href="https://coml.lscp.ens.fr/dihard/2019/sample_subs/track1.zip">https://coml.lscp.ens.fr/dihard/2019/sample_subs/track1.zip</a></li>
+                                                <li><b>Track 2</b>: <a href="https://coml.lscp.ens.fr/dihard/2019/sample_subs/track2.zip">https://coml.lscp.ens.fr/dihard/2019/sample_subs/track2.zip</a></li>
+                                                <li><b>Track 3</b>: <a href="https://coml.lscp.ens.fr/dihard/2019/sample_subs/track3.zip">https://coml.lscp.ens.fr/dihard/2019/sample_subs/track3.zip</a></li>
+                                                <li><b>Track 4</b>: <a href="https://coml.lscp.ens.fr/dihard/2019/sample_subs/track4.zip">https://coml.lscp.ens.fr/dihard/2019/sample_subs/track4.zip</a></li>
+                                            </ul>
+                                            <li>To validate the RTTMs in your submission before creating the zip file, use the <a href="https://github.com/nryant/dscore/blob/master/validate_rttm.py">validate_rttm.py</a> script from the <a href="https://github.com/nryant/dscore">dscore repo</a>) with the command:
+                                                <pre>
+                                                <code>
+python validate_rttm.py rec1.rttm rec2.rttm …</code>
+                                            </pre>
+                                            </li>
+                                            <li>To validate your zip file’s structure, use the <a href="https://coml.lscp.ens.fr/dihard/2019/validate_submission.py">validate_submission.py</a> script with the command:
+                                                <pre>
+                                                <code>
+python validate_submission.py track submission.zip</code>
+                                            </pre>where <code>track</code> is the name of the track you are submitting to (one of “track1”, “track2”, “track3”, “track4”) and <code>submission.zip</code> is the name of your zip file.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div id="submitresults" class="card fluid">
+                                    <h2 class="section double-padded dark"><small>Submitting results via CodaLab</small></h2>
+                                    <div class="section">
+                                        <ul>
+                                            <li>Navigate to the competition page for the track you are submitting to and click on the <b>Participate</b> tab. This will bring up a page that allows you to make new submissions and see previous submissions.</li>
+                                            <li>In the <b>Method name</b> field, enter the name of the system that you are submitting results for.</li>
+                                            <li>Click <b>Submit</b> and select the zip file you wish to submit. This will upload the zip file for processing.</li>
+                                            <br>
+                                            <li>Below the <b>Submit</b> button you will see a table listing all submissions you have made up to the current date with the following information for each:</li>
+                                            <ul>
+                                                <li># -- ordinal number of submission in system; your first submission will be listed as <b>1</b></li>
+                                                <li>SCORE -- DER for the submission; if the scoring is in progress or failed, this will read "---"</li>
+                                                <li>METHOD NAME -- the name of the system that produced the submission</li>
+                                                <li>FILENAME -- name of the zip file you submitted</li>
+                                                <li>SUBMISSION DATE -- date and time of submission in MM/DD/YYY HH:MM:SS format (all times are UDT)</li>
+                                                <li>STATUS -- the current status of your submission, which may be one of</li>
+                                                <ul>
+                                                    <li>Submitting -- zip file is being uploaded</li>
+                                                    <li>Running -- upload is successful and scoring script is running</li>
+                                                    <li>Finished -- scoring script finished successfully and results posted to leaderboard</li>
+                                                    <li>Failed -- scoring script failed</li>
+                                                </ul>
+                                                <li>checkmark -- indicates whether or not submission is on the leaderboard</li>
+                                            </ul>
+                                            <li>If scoring failed for your submission, click the <b>+</b> symbol to the right of its entry in the table. This will display the following, which may be used for debugging purposes:</li>
+                                            <ul>
+                                                <li>Method name -- the method name you entered into the form</li>
+                                                <li>Download your submission -- a download link for the zip file submitted</li>
+                                                <li>View scoring output log -- the scoring program’s output to STDOUT</li>
+                                                <li>View scoring error -- the scoring program’s output to STDERR</li>
+                                                <li>Download output from scoring step -- ignore; downloads a zip file containing files used by CodaLab internally</li>
+                                            </ul>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div id="leaderboard" class="card fluid">
+                                    <h2 class="section double-padded dark"><small>Leaderboard</small></h2>
+                                    <div class="section">
+                                        <ul>
+                                            <li>After your submission finishes scoring (status “Finished”) it will post to the leaderboard, which is viewable from the <b>Results</b> tab.</li>
+                                            <li>The leaderboard lists the most recent submission for each system by each team, ranked in ascending order by DER.</li>
+                                            <li>For each submission on the leaderboard, the following fields are displayed:</li>
+                                            <ul>
+                                                <li># -- ranking of system</li>
+                                                <li>User -- the username for the account that submitted the result</li>
+                                                <li>Entries -- total number of entries by account that submitted result</li>
+                                                <li>Date of Last Entry -- date of last entry by user that submitted result in MM/DD/YY format</li>
+                                                <li>Team Name -- name of team associated with user that submitted result; this is taken from the Team listed on the user’s profile</li>
+                                                <li>Method Name -- the method name entered at submission time</li>
+                                                <li>DER -- diarization error rate (in percent) of submission; ranking of this result is indicated in parentheses</li>
+                                                <li>JER -- Jaccard error rate (in percent) of submission; ranking of this result is indicated in parentheses</li>
+                                            </ul>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div id="resultrules" class="card fluid">
+                                    <h2 class="section double-padded dark"><small>Rules</small></h2>
+                                    <div class="section">
+                                        <ul>
+                                            <li>Each team <b>MUST</b> use a <b>SINGLE</b> account to submit all results</li>
+                                            <li>The team name listed in that user’s profile must be identical to the one you registered with.</li>
+                                            <li>Each team is limited to 6 submissions per day.</li>
+                                            <li>Submissions that are not scored (status shows as “Failed”) do not count against this limit</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="papersubmission" class="card fluid">
+                            <h2 class="section double-padded dark"><small>Paper submission</small></h2>
+                            <div class="section">
+                                For challenge participants contributing papers to the Interspeech special session, the deadlines for abstract submission and final paper submission are:
+                                <ul>
+                                    <li>
+                                        <b>Abstract submission</b> -- <font color="red"><b>March 29, 2019, midnight Anywhere on Earth</b></font>
+                                    </li>
+                                    <li>
+                                        <b>Paper submission</b> -- <font color="red"><b>April 5, 2019, midnight Anywhere on Earth</b></font>
+                                    </li>
+                                    <li>
+                                        <b>Updates to accepted papers</b> -- <font color="red"><b>July 1, 2019, midnight Anywhere on Earth</b></font>
+                                    </li>
+                                </ul>
+                                Please follow instructions provided on:
+                                <ul>
+                                    <a href="https://www.interspeech2019.org/authors/author_resources/">https://www.interspeech2019.org/authors/author_resources/</a>.
+                                </ul>
+                                As topic, you should choose <b>ONLY</b> the special session:
+                                <ul>
+                                    13.13 The Second DIHARD Speech Diarization Challenge (DIHARD II)
+                                </ul>
+                                <ul>
+                                    <li>
+                                        <font color="red"><b>IMPORTANT:</b></font> Papers must be registered in the Interspeech submission system by <font color="red"><b>March 29 (midnight Anywhere on Earth)</b></font>. While the title, abstract, authors list, and pdf may all be changed after this date, a version <b>MUST</b> be submitted to the system with the correct topic by midnight on March 29.<br>
+                                    </li>
+                                    <li>
+                                        Papers should not repeat the descriptions of the tasks, metrics, datasets, or baseline systems, but should cite the <a href="docs/dh2019_is_overview.pdf">challenge paper</a> using the following citation:
+                                        <ul>
+                                            <i>Ryant et al. (2019). The Second DIHARD Diarization Challenge: Dataset, task, and baselines. Proceedings of INTERSPEECH 2019. ISCA. Graz, Autria.</i>
+                                        </ul>
+                                    <li> All papers <b>MUST</b> cite the DIHARD II and SEEDLingS corpora using the following citations:
+                                        <ul>
+                                            <li><i>Bergelson, E. (2016). Bergelson Seedlings HomeBank Corpus. doi: 10.21415/T5PK6D.</i></li>
+                                            <li><i>Ryant et al. (2019). DIHARD Corpus. Linguistic Data Consortium.</i></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                </li>
+                                <li>Papers may report additional results on other corpora.</li>
+                                <li>Accepted papers may update their results on the development and evaluation sets during the paper revision period.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div id="system" class="card fluid">
+                            <h2 class="section double-padded dark"><small>System Descriptions</small></h2>
+                            <ul>
+                                <li>
+                                    At the end of the evaluation, all participating teams must submit a full description of their system with sufficient detail for a fellow researcher to understand the approach and data/computational requirements. System descriptions should adhere to the format described in Appendix F of the <a href="#evaluation">evaluation plan</a>.
+                                </li>
+                                <li>
+                                    System descriptions should be submitted by email to <font size="6"><a href="mailto:dihardchallenge@gmail.com" target="_top">dihardchallenge@gmail.com</a></font>. Please include the text "SYSTEM DESCRIPTION" in the subject of the email.
+                                </li>
+                                <li>
+                                    The deadline for submitted system descriptions is <font color="red"><b>August 16, 2019, midnight Anywhere on Earth</b></font>.
+                                </li>
+                            </ul>
+                        </div>
+                        <div id="final-results" class="card fluid">
+                            <h2 class="section double-padded dark"><small>Final results</small></h2>
+                            <p>
+                                At the conclusion of the evaluation, all final system outputs will be archived by the organizers on <a href="https://zenodo.org/">Zenodo</a>. This archive will contain RTTM outputs for all systems appearing on the final leaderboard as well as scoring output and associated metadata.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style="width:100%">
+                    <div class="col-sm-12">
+                        <div id="results" class="card fluid">
+                            <h2 class="section double-padded dark">Results</h2>
+                            <div class="section">
+                                During the evaluation, all results will be displayed on the CodaLab competition leaderboards:
+                                <ul>
+                                    <li><b>Track 1</b>: <a href="http://dihard.ldc.upenn.edu/competitions/73#results">http://dihard.ldc.upenn.edu/competitions/73#results</a></li>
+                                    <li><b>Track 2</b>: <a href="http://dihard.ldc.upenn.edu/competitions/74#results">http://dihard.ldc.upenn.edu/competitions/74#results</a></li>
+                                    <li><b>Track 3</b>: <a href="http://dihard.ldc.upenn.edu/competitions/75#results">http://dihard.ldc.upenn.edu/competitions/75#results</a></li>
+                                    <li><b>Track 4</b>: <a href="http://dihard.ldc.upenn.edu/competitions/76#results">http://dihard.ldc.upenn.edu/competitions/76#results</a></li>
+                                </ul>
+                                For each track we maintain two leaderboards:
+                                <ul>
+                                    <li> one consisting of results submitted prior to the Interspeech paper deadline on April 5th</li>
+                                    <li> one consisting of all results
+                                </ul>
+                                Results from the baseline system are posted to the leaderboard under team name DIHARD. These results are also available from the <a href="2019/dh2019_is_overview.pdf">challenge paper</a> and <a href="https://github.com/iiscleap/DIHARD_2019_baseline_alltracks">the baseline github repo</a>.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="faq" class="card fluid">
+                    <h2 class="section double-padded dark">FAQ (Frequently Asked Questions)</h2>
+                    <div class="col-sm-12">
+                        <div class="row" style="width:100%;">
+                            <div class="section">
+                                <p align="justify">
+                                    <ol>
+                                        <li style="font-weight:bold">Must I participate in all tracks in the challenge?
+                                            <span style="font-weight:normal">
+                                                <blockquote>No, researchers may choose to participate in a subset of the tracks. All participants <b>MUST</b> register for at least one of track 1 or track 3 (diarization from reference SAD). Participation in tracks 2 and 4 is optional. For example, you may participate only in track 1; only in track 3; or in tracks 3 and 4. (Other combinations are possible.)</blockquote>
+                                            </span><br></li>
+                                        <li style="font-weight:bold">Must I submit a paper to the Interspeech special session?
+                                            <span style="font-weight:normal">
+                                                <blockquote>
+                                                    No, you are not required to submit to the special session in order to participate. Submission to the session is strongly encouraged, but not mandatory.
+                                                </blockquote>
+                                            </span><br></li>
+                                        <li style="font-weight:bold">My team wishes to submit a paper to the Interspeech special session. What should we include?
+                                            <span style="font-weight:normal">
+                                                <blockquote>
+                                                    Papers submitted to the special session should include preliminary results on the development and evaluation sets; these results may be updated during the paper revision period. If they choose to, papers may also report results on other corpora. Papers should not repeat descriptions of the tasks, metrics, datasets, or baseliens, but instead cite the challenge paper. For more details, please consult the <a href="#papersubmission">paper submission</a> instructions.
+                                                </blockquote>
+                                            </span><br></li>
+                                        <li style="font-weight:bold">Are there any limitations about the training data?
+                                            <span style="font-weight:normal">
+                                                <blockquote>Participants have the freedom to choose their own training data, whether it is publicly available or not. The only exception is that you should not use data that overlaps with the evaluation set. See the rules section of the <a href="#evaluation">evaluation plan</a> for a listing of these sources. Please also note that clear descriptions of the data used are required in the final system descriptions document. </blockquote>
+                                            </span><br></li>
+                                        <li style="font-weight:bold">My team previously has acquired access to the full SEEDLingS corpus. Can we use this data for training or development?
+                                            <span style="font-weight:normal">
+                                                <blockquote>No, the SEEDLingS data, whether acquired via HomeBank or some other route, is off limits for all purposes. This includes training and tuning, but also acoustic adaptation.
+                                                </blockquote>
+                                            </span><br></li>
+                                        <li style="font-weight:bold">My team participated in DIHARD I. Can we use the DIHARD I development and evaluation sets for training or development?
+                                            <span style="font-weight:normal">
+                                                <blockquote>The DIHARD I evaluation set is off limits for <b>ALL PURPOSES</b>. The DIHARD I development set may be used however you wish, though given that it is a subset of the DIHARD II development set, we expect it to have limited utility.
+                                                </blockquote>
+                                            </span><br></li>
+                                        <li style="font-weight:bold">Can I use the DIHARD II development set to do data simulation and augmentation?
+                                            <span style="font-weight:normal">
+                                                <blockquote>Yes, development data is free to be used in any way you see fit, including for tuning your current diarization system or augmenting training data.</blockquote>
+                                            </span><br>
+                                        </li>
+                                        <li style="font-weight:bold">How can I upload the results?
+                                            <span style="font-weight:normal">
+                                                <blockquote>Please see the <a href="#resultssubmission">results submission</a> instructions.</blockquote>
+                                            </span><br></li>
+                                        <li style="font-weight:bold">Which files should I submit?
+                                            <span style="font-weight:normal">
+                                                <blockquote>All submissions should consist exclusively of RTTMs output by your system. For tracks 1 and 2 there should be one RTTM per FLAC file in the single channel evaluation set. For tracks 3 and 4, there should be one RTTM per Kinect array in each CHiME-5 evaluation set session. For full details about what to submit and formatting of your submission, please consult the <a href="#resultssubmission">results submission</a> instructions.</blockquote>
+                                            </span><br></li>
+                                        <li style="font-weight:bold">For the multichannel tracks (tracks 3 and 4), should we produce one RTTM per Kinect array or one for the entire session
+                                            <span style="font-weight:normal">
+                                                <blockquote>Please refer to the previous question.
+                                                </blockquote>
+                                            </span><br></li>
+                                        <li style="font-weight:bold">For the multichannel tracks (tracks 3 and 4), can we use multiple Kinect arrays to produce each RTTM? That is, could we opt to use audio from arrays U01, U02, and U03 to produce the RTTM for array U01?
+                                            <span style="font-weight:normal">
+                                                <blockquote>Participants should produce <b>ONE</b> RTTM per Kinect array, each the output of the system when considering <b>ONLY</b> the channels from that array. For instance, for session S21 they should produce the following RTTMs:
+                                                    <ul>
+                                                        <li>S21_U01.rttm -- produced using only the channels from array U01</li>
+                                                        <li>S21_U02.rttm -- produced using only the channels from array U02</li>
+                                                        <li>S21_U03.rttm -- produced using only the channels from array U03</li>
+                                                        <li>S21_U04.rttm -- produced using only the channels from array U04</li>
+                                                        <li>S21_U05.rttm -- produced using only the channels from array U05</li>
+                                                        <li>S21_U06.rttm -- produced using only the channels from array U06</li>
+                                                    </ul>
+                                                </blockquote>
+                                            </span><br></li>
+                                        <li style="font-weight:bold">What should I report in the system descriptions document?
+                                            <span style="font-weight:normal">
+                                                <blockquote>Clear documentation of each system on the final leaderboard is required, providing sufficient detail for a fellow researcher to understand the approach and data/computational requirements. This includes, as mentioned above, explanation of any training data used. For further details, consult the <a href="#system">system descriptions</a> instructions.</blockquote>
+                                            </span><br>
+                                        <li style="font-weight:bold">Are teams with members from multiple organizations allowed?
+                                            <span style="font-weight:normal">
+                                                <blockquote>Yes, teams spanning multiple organizations are allowed, though one person from each organization within the team must sign and return the LDC Data License Agreement. One individual should serve as the team's point of contact for DIHARD, but every organization with access to the data must sign the evaluation agreement.
+                                                </blockquote>
+                                            </span><br>
+                                        </li>
+                                        <li style="font-weight:bold">I attempted to register an account with CodaLab, but am unable to get a confirmation email. What should I do?
+                                            <span style="font-weight:normal">
+                                                <blockquote>Please consult our registration <a href="#registration-problems">troubleshooting tips</a>.
+                                                </blockquote>
+                                            </span><br>
+                                        </li>
+                                        <li style="font-weight:bold">Is it possible to use the information about the number of speakers being 4 in tracks 3 and 4? This information is available in the CHiME-5 website and other CHiME-5 related publications.
+                                            <span style="font-weight:normal">
+                                                <blockquote>In order to maintain consistency with the single channel tracks, where domain/number of speakers is not known for the evaluation set, using the oracle number of speakers for the CHiME sessions is not allowed.
+                                                </blockquote>
+                                            </span><br>
+                                        </li>
+                                    </ol>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="contact" class="card fluid" style="width:100%">
+                    <h2 class="section double-padded dark">Contact Us</h2>
+                    <div class="col-sm-12">
+                        <div class="row" style="width:100%;">
+                            <div class="card warning fluid" style="width:100%; text-align:center">
+                                <p style="text-align: center"><b>
+                                        <font size="5">
+                                            <br>For more information 
+                                            <a href="https://groups.google.com/forum/#!forum/dihard">join our mailing list</a></font>
+                                        <br><br>
+                                        or email us at
+                                        <font size="6"><a href="mailto:dihardchallenge@gmail.com" target="_top">dihardchallenge@gmail.com</a></font>
+                                    </b>
+                                    <br><br>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--<div align="center">
+                                <h5><b>Kenneth Church</b><br>(Baidu)</h5>
+                                <h5><b>Christopher Cieri</b><br>(Linguistic Data Consortium)</h5>
+                                <h5><b>Alejandrina Cristia</b><br>(Laboratoire de Sciences Cognitives et Psycholinguistique)</h5>
+                                <h5><b>Jun Du</b><br>(University of Science and Technology of China)</h5>
+                                <h5><b>Sriram Ganapathy</b><br>(Indian Institute of Science)</h5>
+                                <h5><b>Mark Liberman</b><br>(Linguistic Data Consortium)</h5>
+                                <h5><b>Neville Ryant</b><br>(Linguistic Data Consortium)</h5>
+                        </div>
+                        -->
+        </div>
+        </main>
+    </div>
+    </div>
+    <script>
+    // Search script
+    var docs = [{ id: "getting-started", keys: ["html", "viewport", "head", "meta", "getting started", "introduction", "browser support", "installation", "usage", "setup", "cdn", "npm", "yarn"] }, { id: "common-textual-elements", keys: ["p", "paragraph", "text", "textual elements", "strong", "bold", "b", "em", "i", "emphasis", "italics", "small", "a", "link", "hr", "horizontal rule", "sub", "subscript", "sup", "exponent", "superscript", "normalize", "reset"] }, { id: "heading", keys: ["heading", "h1", "h2", "h3", "h4", "h5", "h6", "small", "title", "subtitle", "subheading"] }, { id: "images-captions", keys: ["img", "image", "responsive", "responsiveness", "caption", "figure", "figcaption"] }, { id: "lists", keys: ["list", "ul", "ol", "li"] }, { id: "code-and-quotations", keys: ["code", "pre", "kbd", "blockquote", "quotation"] }, { id: "grid", keys: ["grid", "grid system", "col", "column", "layout", "row", "container", "small", "medium", "large", "sm", "md", "lg", "cols", "predefined", "offset", "order", "reorder", "first", "last", "normal"] }, { id: "cards", keys: ["card", "row", "section", "container", "col", "column", "small", "large", "fluid", "warning", "error"] }, { id: "card-sections", keys: ["card", "row", "section", "container", "col", "column", "media", "double-padded", "dark"] }, { id: "forms-and-input", keys: ["form", "fieldset", "legend", "input", "type", "text", "checkbox", "radio", "email", "password", "tel", "input-group", "input group", "row", "col", "column", "vertical", "fluid", "file", "upload", "select", "textarea", "option", "label"] }, { id: "buttons", keys: ["button", "input", "reset", "submit", "link", "a", "label", "primary", "secondary", "tertiary", "aria", "small", "large", "inverse"] }, { id: "input-grouping", keys: ["input group", "input-group", "vertical", "fluid", "input", "button", "button group", "button-group"] }, { id: "header", keys: ["navigation", "header", "sticky", "button", "logo", "link"] }, { id: "navigation-bar", keys: ["navigation", "bar", "nav", "link"] }, { id: "footer", keys: ["navigation", "footer", "sticky", "link"] }, { id: "drawer", keys: ["drawer", "checkbox", "toggle", "close", "drawer-toggle", "drawer-close", "menu", "navigation", "hamburger"] }, { id: "tables", keys: ["table", "caption", "thead", "tbody", "tr", "th", "td", "horizontal", "striped", "hoverable"] }, { id: "text-highlighting", keys: ["mark", "highlight", "text highlighting", "tag", "primary", "secondary", "tertiary", "inline-block"] }, { id: "toasts", keys: ["span", "toast", "mobile", "contextual", "message"] }, { id: "tooltips", keys: ["tooltip", "aria-label", "contextual", "bottom", "span"] }, { id: "modal-dialogs", keys: ["modal", "dialog", "contextual", "alert", "notification"] }, { id: "spoilers-and-accordions", keys: ["spoiler", "collapse", "accordion", "contextual", "vertical tabs"] }, { id: "progress-bars", keys: ["progress", "bar", "primary", "secondary", "tertiary", "inline"] }, { id: "donut-spinners", keys: ["spinner", "donut", "loading", "progress", "primary", "secondary", "tertiary", "inline", "animation", "animated"] }, { id: "icons", keys: ["icon", "svg", "feather", "icons"] }, { id: "visibility-helpers", keys: ["hidden", "visibility", "visually-hidden", "accessibility", "utility"] }, { id: "element-decorators", keys: ["border", "border-radius", "bordered", "rounded", "circular", "shadowed", "utility"] }, { id: "responsive-spacing-sizing", keys: ["responsiveness", "margin", "padding", "responsive-margin", "responsive-margin"] }];
+    var options = { threshold: 0.4, keys: ["keys"] };
+    var fuse = new Fuse(docs, options);
+
+    function search() {
+        var query = document.getElementById('search-bar').value;
+        if (query.length) {
+            var result = fuse.search(query);
+            if (result.length) {
+                var resIds = result.map(function(item) {
+                    return ':not(#link-to-' + item.id + ')';
+                }).join('');
+                document.getElementById('search-style').innerHTML = '#no-results{display:none;}#nav-drawer a' + resIds + '{display:none;}';
+            } else {
+                document.getElementById('search-style').innerHTML = '#nav-drawer a{display:none;}#no-results{display:block;}';
+            }
+        } else {
+            document.getElementById('search-style').innerHTML = '#no-results{display:none;}';
+        }
+    }
+    // Codepen prefill script
+    var el = document.querySelectorAll('.prefiller-example > pre');
+    el.forEach(e => e.innerHTML = '<form action="https://codepen.io/pen/define" method="POST" target="_blank" class="codepen-form">' +
+        '<input type="hidden" name="data" value=\'' + JSON.stringify({
+            html: e.innerText,
+            css_external: "https://cdnjs.cloudflare.com/ajax/libs/mini.css/3.0.1/mini-default.css"
+        }).replace(/"/g, "&quot;")
+        .replace(/'/g, "&apos;") + '\'>' +
+        '<input type="image" class="codepen-link" src="data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23424242%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolygon%20points%3D%2212%202%2022%208.5%2022%2015.5%2012%2022%202%2015.5%202%208.5%2012%202%22%3E%3C%2Fpolygon%3E%3Cline%20x1%3D%2212%22%20y1%3D%2222%22%20x2%3D%2212%22%20y2%3D%2215.5%22%3E%3C%2Fline%3E%3Cpolyline%20points%3D%2222%208.5%2012%2015.5%202%208.5%22%3E%3C%2Fpolyline%3E%3Cpolyline%20points%3D%222%2015.5%2012%208.5%2022%2015.5%22%3E%3C%2Fpolyline%3E%3Cline%20x1%3D%2212%22%20y1%3D%222%22%20x2%3D%2212%22%20y2%3D%228.5%22%3E%3C%2Fline%3E%3C%2Fsvg%3E" width="40" height="40" value="Open in Codepen">' +
+        '</form>' + e.innerHTML);
+    </script>
+    <style id="search-style">
+    #no-results {
+        display: none;
+    }
+    </style>
+    <script>
+    var coll = document.getElementsByClassName("collapsible");
+    var i;
+
+    for (i = 0; i < coll.length; i++) {
+        coll[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            if (content.style.maxHeight) {
+                content.style.maxHeight = null;
+            } else {
+                content.style.maxHeight = content.scrollHeight + "px";
+            }
+        });
+    }
+    </script>
+</body>
+
+</html>
